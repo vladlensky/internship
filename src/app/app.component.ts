@@ -15,10 +15,12 @@ export class AppComponent {
     el.scrollIntoView({block: 'end', behavior: 'smooth'});
   }
   toggle(menu) {
-    if (menu.style.display === 'none') {
-      menu.style.display = 'inherit';
+    if (menu.style.visibility === 'hidden') {
+      menu.style.visibility = 'visible';
+      menu.style.opacity = '1';
     } else {
-      menu.style.display = 'none';
+      menu.style.visibility = 'hidden';
+      menu.style.opacity = '0';
     }
   }
 }

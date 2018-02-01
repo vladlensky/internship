@@ -1,3 +1,6 @@
+$mainColor : rgb(250, 251, 255);
+$buttonsColor : rgb(0, 0 , 0);
+$hoverButtons : rgb(0, 155, 140);
 a{
   text-decoration: none;
   transition:0.5s all;
@@ -19,7 +22,6 @@ a{
   width: calc(100% - 50px);
   padding: 0 25px;
   background: red;
-  border-bottom: 1px solid black;
 }
 
 .header{
@@ -30,53 +32,43 @@ a{
   position: fixed;
   top: 0;
   width: 100%;
-  background:green;
+  box-shadow: -1px 23px 46px -28px #000000;
+  background: $mainColor;
 }
 
 .logo{
   height: 39px;
   width: 76px;
   padding: 15px 10px 10px;
+  margin-left: 5%;
   float:left;
 }
 
 .menu{
-  width: calc(100% - 96px);
+  width: calc(95% - 96px);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top:10px;
+  li {
+    display:inline-block;
+    a {
+      margin-right: 25px;
+      display: block;
+      font-size:0.85em;
+      color:$buttonsColor;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      &:hover {
+        cursor: pointer;
+        color:$hoverButtons;
+      }
+    }
+  }
 }
-.menu li{
-  display:inline-block;
-}
-.menu li:first-child{
-  margin-left:0;
-}
-.menu li a{
-  margin-right: 10px;
-  display: block;
-  font-size:0.85em;
-  color:#fff;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-family: 'Lato', sans-serif;
-}
-#nav .current a {
-  color:#fb326f;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-.menu li a:hover ,.menu li.active a{
-  cursor: pointer;
-  color:#fb326f;
-}
+
 .toggleMenu {
   display:  none;
   border-radius:2em;
@@ -84,44 +76,45 @@ a{
   -moz-border-radius:2em;
   -o-border-radius:2em;
 }
-.nav:before,
-.nav:after {
-  content: " ";
-  display: table;
-}
-.nav:after {
-  clear: both;
-}
-.nav ul {
-  list-style: none;
+@media screen and (min-width:1001px) {
+  .nav {
+    opacity: 1!important;
+    visibility: visible!important;
+  }
 }
 @media screen and (max-width:1000px) {
   .menu {
     display: inherit;
     margin:10px 0;
+    li {
+      a {
+        margin-right: 0;
+        text-align:left;
+        border-radius:0;
+        -webkit-border-radius:0;
+        -moz-border-radius:0;
+        -o-border-radius:0;
+      }
+    }
+    ul {
+      margin:0;
+    }
   }
   .active {
     display: block;
   }
   .toggleMenu {
     position: absolute;
-    right: 10px;
-    top: 10px;
-
+    right: 25px;
+    top: 25px;
     display: inherit;
     float: right;
   }
-  .menu li a{
-    margin-right: 0;
-    text-align:left;
-    border-radius:0;
-    -webkit-border-radius:0;
-    -moz-border-radius:0;
-    -o-border-radius:0;
-  }
   .nav {
+    opacity:0;
+    visibility: hidden;
+    transition: all 0.4s ease;
     font-size: medium;
-    display: none;
     list-style: none;
     *zoom: 1;
     width:180px;
@@ -129,40 +122,22 @@ a{
     right:0px;
     top:80px;
     z-index: 9999;
-  }
-  .menu li a span.messages{
-    text-align:center;
-    top:15px;
-  }
-  .nav li ul{
-    width:100%;
-  }
-  .nav li a{
-    padding: 5px;
-  }
-  .menu ul{
-    margin:0;
-  }
-  .nav > li.hover > ul {
-    width:100%;
-  }
-  .nav > li {
-    float: none;
-    display:block;
-  }
-  .nav ul {
-    display: block;
-    width: 100%;
-  }
-  .nav > li.hover > ul , .nav li li.hover ul {
-    position: static;
-  }
-  .nav li a{
-    border-top:1px solid #eee;
-    background:#fff;
-    color:#384254;
-  }
-  .nav li:first-child a{
-    border-top:none;
+    li {
+      float: none;
+      display:block;
+      ul {
+        width:100%;
+      }
+      a {
+        padding: 5px;
+        background:#fff;
+        color:#384254;
+        &:hover {
+          cursor: pointer;
+          color: black;
+          background-color:$hoverButtons;
+        }
+      }
+    }
   }
 }
