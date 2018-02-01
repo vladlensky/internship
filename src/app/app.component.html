@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="header">
+  <div class="container">
+    <div class="logo">
+      <img src="assets/logo-dd.png" alt="">
+    </div>
+    <div class="menu">
+      <a class="toggleMenu" (click)="toggle(menu)"><img src="assets/nav_icon.png" alt="" /> </a>
+      <ul #menu class="nav" id="nav">
+        <li class="current"><a (click)="scroll(internship)" class="scroll">Стажировка</a></li>
+        <li><a (click)="scroll(stages)" class="scroll">Этапы стажировки</a></li>
+        <li><a (click)="scroll(conditions)" class="scroll">Условия стажировки</a></li>
+        <li><a (click)="scroll(about)" class="scroll">О компании</a></li>
+        <li><a (click)="scroll(feedback)" class="scroll">Оставить заявку</a></li>
+      </ul>
+    </div>
+    <div class="clearfix"> </div>
+  </div>
+</div>
+<div class="content">
+  <div class="section" #internship [style.height]="getHeight() + 'px'"></div>
+  <div class="section" #stages [style.height]="getHeight() + 'px'"></div>
+  <div class="section" #conditions [style.height]="getHeight() + 'px'"></div>
+  <div class="section" #about [style.height]="getHeight() + 'px'"></div>
+  <div class="section" #feedback [style.height]="getHeight() + 'px'"></div>
+</div>
