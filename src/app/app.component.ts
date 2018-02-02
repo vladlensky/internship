@@ -1,5 +1,5 @@
-import {Component, ViewChild} from '@angular/core';
-import {el} from '@angular/platform-browser/testing/src/browser_util';
+import {Component} from '@angular/core';
+import {MainService} from './Main.service';
 
 
 @Component({
@@ -8,6 +8,7 @@ import {el} from '@angular/platform-browser/testing/src/browser_util';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  constructor(private mainService: MainService) { }
   getHeight() {
     return document.documentElement.clientHeight - 80;
   }
@@ -22,5 +23,29 @@ export class AppComponent {
       menu.style.visibility = 'hidden';
       menu.style.opacity = '0';
     }
+  }
+  toggleFeedback(a, feedback) {
+    if (a.style.color === 'white') {
+      a.style.background =  'white';
+      a.style.color =  'black';
+      feedback.style.visibility = 'hidden';
+      feedback.style.opacity = '0';
+    } else {
+      a.style.background =  'rgb(0, 150, 150)';
+      a.style.color =  'white';
+      feedback.style.visibility = 'visible';
+      feedback.style.opacity = '1';
+      feedback.style.right = '2%';
+      feedback.style.bottom = '90px';
+    }
+  }
+  sendMessage(name, phone, email, textArea) {
+    event.preventDefault();
+    this.mainService.sendMessage(name.value, phone.value, email.value, textArea.value).subscribe(value => {
+        alert('Спасибо за ответ!');
+      },
+      error => {
+      alert('Упс! Возникла ошибка.');
+      });
   }
 }
