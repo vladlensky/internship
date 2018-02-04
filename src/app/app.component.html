@@ -8,8 +8,8 @@
       <a class="toggleMenu" (click)="toggle(menu)"><img style="width: 20px" src="assets/nav_icon.png" alt="" /> </a>
       <ul #menu style="opacity:0;visibility: hidden;" class="nav" id="nav">
         <li><a (click)="scroll(internship)">Стажировка</a></li>
-        <li><a (click)="scroll(stages)">Этапы стажировки</a></li>
-        <li><a (click)="scroll(conditions)">Условия стажировки</a></li>
+        <li><a (click)="scroll(stages)">Условия стажировки</a></li>
+        <li><a (click)="scroll(conditions)">Этапы стажировки</a></li>
         <li><a (click)="scroll(about)">О компании</a></li>
       </ul>
     </div>
@@ -17,12 +17,65 @@
   </div>
 </div>
 <div class="content">
-  <div style="background-color: rgb(0, 150, 150);" class="section" #internship [style.height]="getHeight() + 'px'"></div>
-  <div style="background-color: rgb(0, 130, 200);" class="section" #stages [style.height]="getHeight() + 'px'"></div>
-  <div  style="background-color: rgb(0, 70, 80);" class="section" #conditions [style.height]="getHeight() + 'px'"></div>
-  <div class="section" #about [style.height]="getHeight() + 'px'">
+  <div style="background-color: rgb(0, 150, 150);" class="section" #internship [style.height]="getHeight() + 'px'">
+    <div class="center">
+      <div style="color: white" class="title">Стажировка:</div>
+        <div class="text">
+          Мы ищем в команду frontend разработчика!
+        </div>
+        <div class="text">
+          Вам предстоит разработка фронтенд части разнообразных высоконагруженных портальных решений и не только.
+        </div>
+        <div class="text">
+          <span style="color: white">Основные используемые технологии:</span> JavaScript (ES5 / ES6 / ES7), TypeScript, SCSS, Webpack, Gulp, RxJS и другие.
+        </div>
+        <div class="text">
+          <span style="color: white">Основные фреймворки:</span> jQuery, AngularJS, Angular 5, React. Взаимодействие с бэкендом .NET / Java по средствам Rest API, WebSockets и нативных подходов как Razor, JSP.
+        </div>
+        <div class="text">
+          Задачи обещают быть интересными!
+        </div>
+    </div>
+  </div>
+  <div style="background-color: rgb(210, 210, 210);" class="section" #stages [style.height]="getHeight() + 'px'">
+    <div class="center">
+      <div class="title">Условия стажировки:</div>
+      <div class="text conditions">
+        Мы берем стажера в свою команду, чтобы в будущем получить квалифицированного специалиста.
+      </div>
+      <div class="text conditions">
+        Вам предстоит разработка фронтенд части разнообразных высоконагруженных портальных решений и не только.
+      </div>
+      <ul>
+        <li>Хорошего знания JavaScript ES5</li>
+        <li>Понимания основных принципов ООП и паттернов проектирования</li>
+        <li>Владения навыками адаптивной, кросбраузерной верстки (HTML5, CSS3)</li>
+      </ul>
+      <div class="text conditions">
+        Со своей стороны, мы гарантируем:
+      </div>
+      <ul>
+        <li>Официальное трудоустройство на время стажировки</li>
+        <li>Выполнение реальных проектных задач под руководством опытного наставника</li>
+        <li>Полностью гибкий график, частичная занятость от 20 часов в неделю</li>
+        <li>Гарантированное трудоустройство при успешном прохождении стажировки</li>
+      </ul>
+    </div>
+  </div>
+  <div style="background-color: rgb(0, 70, 80);" class="section" #conditions [style.height]="getHeight() + 'px'"></div>
+  <div style="background-color: rgb(210, 210, 210);" class="section" #about [style.height]="getHeight() + 'px'">
+    <div class="center">
+      <div class="title">О компании:</div>
+      <div class="text">
+        Digital Design уже 25 лет занимается разработкой программного обеспечения и входит в ТОП-20 разработчиков ПО в России. За время работы компании было реализовано свыше 2500 проектов, многие из которых включены в Единый реестр российских программ Минкомсвязи и успешно применяются в крупнейших холдингах, министерствах и ведомствах России и СНГ.
+      </div>
+      <div class="text">
+        <span class="coloredText">Digital Design</span> - это возможность сделать шаг вперед для опытных специалистов и отличный старт для тех, кто только начинает свою карьеру
+      </div>
+    </div>
+  </div>
     <a #feedbackButton (click)="toggleFeedback(feedbackButton, feedbackForm)" class="button">Обратная связь</a>
-    <form (submit)="sendMessage(name, phone, email, textArea)" method="post" #feedbackForm id="feedback-form">
+    <form style="" (submit)="sendMessage(name, phone, email, textArea)" method="post" #feedbackForm id="feedback-form">
       Как к Вам обращаться:
       <input #name type="text" name="nameFF" required placeholder="Ваше имя" x-autocompletetype="name">
       Телефон:
@@ -33,5 +86,4 @@
       <textarea #textArea name="messageFF" required style="height: 100px"></textarea>
       <button type="submit">Отправить</button>
     </form>
-  </div>
 </div>

@@ -11,6 +11,10 @@ export class MainService {
     return this.httpClient.post('http://localhost:8000/', {name: name, phone: phone, email: email, textArea: textArea});
   }
 
+  public checkUser(): Observable<any> {
+    return this.httpClient.get('http://localhost:8000/');
+  }
+
   onPageLoad() {
 
   }

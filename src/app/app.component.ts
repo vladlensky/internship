@@ -8,7 +8,9 @@ import {MainService} from './Main.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private mainService: MainService) { }
+  constructor(private mainService: MainService) {
+    this.mainService.checkUser().subscribe();
+  }
   getHeight() {
     return document.documentElement.clientHeight - 80;
   }
