@@ -212,8 +212,11 @@ li {
   }
 }
 @media screen and (max-width:1000px) {
+  .center {
+    text-align: inherit;
+  }
   li {
-    font-size: 13px;
+    font-size: 15px;
   }
   .conditions {
     font-size: 13px;
