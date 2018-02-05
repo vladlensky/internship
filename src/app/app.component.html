@@ -2,7 +2,7 @@
 <div class="header">
   <div class="container">
     <div class="logo">
-      <img src="assets/logo-dd.png" alt="">
+      <a href="https://digdes.ru/"><img src="assets/logo-dd.png" alt=""></a>
     </div>
     <div class="menu">
       <a class="toggleMenu" (click)="toggle(menu)"><img style="width: 20px" src="assets/nav_icon.png" alt="" /> </a>
@@ -43,26 +43,72 @@
       <div class="text conditions">
         Мы берем стажера в свою команду, чтобы в будущем получить квалифицированного специалиста.
       </div>
-      <div class="text conditions">
-        Вам предстоит разработка фронтенд части разнообразных высоконагруженных портальных решений и не только.
-      </div>
       <ul>
-        <li>Хорошего знания JavaScript ES5</li>
-        <li>Понимания основных принципов ООП и паттернов проектирования</li>
-        <li>Владения навыками адаптивной, кросбраузерной верстки (HTML5, CSS3)</li>
+        <li>Хорошего знания JavaScript ES5.</li>
+        <li>Понимания основных принципов ООП и паттернов проектирования.</li>
+        <li>Владения навыками адаптивной, кросбраузерной верстки (HTML5, CSS3).</li>
       </ul>
       <div class="text conditions">
         Со своей стороны, мы гарантируем:
       </div>
       <ul>
-        <li>Официальное трудоустройство на время стажировки</li>
-        <li>Выполнение реальных проектных задач под руководством опытного наставника</li>
-        <li>Полностью гибкий график, частичная занятость от 20 часов в неделю</li>
-        <li>Гарантированное трудоустройство при успешном прохождении стажировки</li>
+        <li>Официальное трудоустройство на время стажировки.</li>
+        <li>Выполнение реальных проектных задач под руководством опытного наставника.</li>
+        <li>Полностью гибкий график, частичная занятость от 20 часов в неделю.</li>
+        <li>Гарантированное трудоустройство при успешном прохождении стажировки.</li>
       </ul>
     </div>
   </div>
-  <div style="background-color: rgb(0, 70, 80);" class="section" #conditions [style.height]="getHeight() + 'px'"></div>
+  <div style="background-color: rgb(0, 150, 150);" class="section" #conditions [style.height]="getHeight() + 'px'">
+    <div class="center">
+      <div style="color: white" class="title">Этапы стажировки:</div>
+      <div style="display: flex;flex-direction: row">
+        <div class="stageNumber">Этап 1</div>
+        <div class="stagePoints">
+          <div style="border: 10px solid white;border-radius: 20px"></div>
+          <div style="background-color:black;width:0;height:100%;border: 1px solid black;border-top: transparent;border-bottom: transparent"></div>
+        </div>
+        <div>
+          <div class="stage"><span style="color: white">Длительность: </span> 0 - 100 часов.</div>
+          <div class="stage"><span style="color: white">Оплата: </span> нет. </div>
+          <div class="stage"><span style="color: white">Задачи: </span> общее знакомство с проектами компании, инструментами разработки, регламентами разработки и так далее.</div>
+        </div>
+      </div>
+      <div style="display: flex;flex-direction: row">
+        <div class="stageNumber">Этап 2</div>
+        <div class="stagePoints">
+          <div style="border: 10px solid white;border-radius: 20px"></div>
+          <div style="background-color:black;width:0;height:100%;border: 1px solid black;border-top: transparent;border-bottom: transparent"></div>
+        </div>
+        <div>
+          <div class="stage"><span style="color: white">Длительность: </span> 100 - 300 часов.</div>
+          <div class="stage"><span style="color: white">Оплата: </span> компенсация питания.</div>
+          <div class="stage"><span style="color: white">Задачи: </span> маленькие проектные задачи под руководством наставника.</div>
+        </div>
+      </div>
+      <div style="display: flex;flex-direction: row">
+        <div class="stageNumber">Этап 3</div>
+        <div class="stagePoints">
+          <div style="border: 10px solid white;border-radius: 20px"></div>
+          <div style="background-color:black;width:0;height:100%;border: 1px solid black;border-top: transparent;border-bottom: transparent"></div>
+        </div>
+        <div>
+          <div class="stage"><span style="color: white">Длительность: </span> 300 - 500 часов.</div>
+          <div class="stage"><span style="color: white">Оплата: </span> есть.</div>
+          <div class="stage"><span style="color: white">Задачи: </span> самостоятельное выполнение проектных задач.</div>
+        </div>
+      </div>
+      <div style="display: flex;flex-direction: row">
+        <div class="stageNumber">Этап 4</div>
+        <div class="stagePoints">
+          <div style="border: 10px solid white;border-radius: 20px"></div>
+        </div>
+        <div>
+          <div class="stage">Предложение о работе в компании Digital Design.</div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div style="background-color: rgb(210, 210, 210);" class="section" #about [style.height]="getHeight() + 'px'">
     <div class="center">
       <div class="title">О компании:</div>
@@ -70,11 +116,11 @@
         Digital Design уже 25 лет занимается разработкой программного обеспечения и входит в ТОП-20 разработчиков ПО в России. За время работы компании было реализовано свыше 2500 проектов, многие из которых включены в Единый реестр российских программ Минкомсвязи и успешно применяются в крупнейших холдингах, министерствах и ведомствах России и СНГ.
       </div>
       <div class="text">
-        <span class="coloredText">Digital Design</span> - это возможность сделать шаг вперед для опытных специалистов и отличный старт для тех, кто только начинает свою карьеру
+        <span class="coloredText">Digital Design</span> - это возможность сделать шаг вперед для опытных специалистов и отличный старт для тех, кто только начинает свою карьеру.
       </div>
     </div>
   </div>
-    <a #feedbackButton (click)="toggleFeedback(feedbackButton, feedbackForm)" class="button">Обратная связь</a>
+    <a #feedbackButton (click)="toggleFeedback(feedbackButton, feedbackForm)" class="button">Отправить резюме</a>
     <form style="" (submit)="sendMessage(name, phone, email, textArea)" method="post" #feedbackForm id="feedback-form">
       Как к Вам обращаться:
       <input #name type="text" name="nameFF" required placeholder="Ваше имя" x-autocompletetype="name">
